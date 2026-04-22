@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { AnimatePresence } from 'framer-motion';
+// We add this comment to stop ESLint from complaining about "unused" motion
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInvoices } from '../../context/InvoiceContext';
 import { generateId } from '../../utils/helpers';
 import Button from '../ui/Button';
