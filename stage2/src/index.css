@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+/* Initialize Tailwind v4 */
+@import "tailwindcss";
+
+/* Force Tailwind to listen to our custom class toggle for dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Map exact Figma hex codes to semantic Tailwind variables */
+@theme {
+  --color-brand: #7C5DFA;
+  --color-brand-hover: #9277FF;
+  
+  --color-dark-main: #141625;
+  --color-dark-card: #1E2139;
+  --color-dark-hover: #252945;
+  
+  --color-light-main: #F8F8FB;
+  --color-light-card: #FFFFFF;
+  
+  --color-slate-100: #DFE3FA;
+  --color-slate-300: #888EB0;
+  --color-slate-500: #7E88C3;
+  --color-slate-900: #0C0E16;
+  
+  --color-danger: #EC5757;
+  --color-danger-hover: #FF9797;
+
+  --font-spartan: "League Spartan", sans-serif;
+}
+
+/* Custom Typography Utilities from the Design System */
+@utility text-heading-l {
+  font-size: 36px;
+  line-height: 33px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+@utility text-heading-m {
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: -0.75px;
+  font-weight: 700;
+}
+@utility text-heading-s {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  font-weight: 700;
+}
+@utility text-heading-s-var {
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  font-weight: 700;
+}
+@utility text-body {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+}
+@utility text-body-var {
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  font-weight: 500;
+}
+
+/* Global resets and Theme background syncing */
+@layer base {
+  body {
+    @apply bg-light-main text-slate-500 font-spartan transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark-main text-slate-100;
+  }
+}
