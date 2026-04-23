@@ -1,16 +1,91 @@
-# React + Vite
+# 🧾 Invoice Management App — HNG Stage 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional, responsive, and accessible Invoice Management Application built with **React** and **Tailwind CSS v4**. This project was developed as part of the Frontend Wizards Stage 2 task at HNG.
 
-Currently, two official plugins are available:
+## 🔗 Project Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Live Demo:** [Insert Your Vercel/Netlify URL Here]
+- **GitHub Repository:** [Insert Your GitHub Repo URL Here]
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Full CRUD Functionality:** Create, Read, Update, and Delete invoices.
+- **Draft & Payment System:** Save invoices as "Draft" or "Pending." Mark pending invoices as "Paid."
+- **Data Persistence:** All invoice data and theme preferences are persisted using `LocalStorage`.
+- **Advanced Filtering:** Filter invoices by status (Draft, Pending, Paid) using an intuitive checkbox dropdown.
+- **Light/Dark Mode:** Seamless global theme toggling with a persistent state.
+- **Responsive Design:** Optimized for Mobile (320px+), Tablet (768px+), and Desktop (1024px+).
+- **Dynamic Forms:** Add or remove multiple items in a single invoice with real-time total calculations.
+- **Strict Validation:** Robust form validation using `Zod` and `react-hook-form`.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** [React](https://reactjs.org/) (Vite)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **State Management:** React Context API
+- **Routing:** React Router DOM
+- **Form Handling:** `react-hook-form`
+- **Validation:** `Zod`
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** Custom SVG Assets
+
+## 📦 Setup Instructions
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/invoice-app.git
+   cd invoice-app
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   bun install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   bun dev
+   ```
+
+4. **Build for production:**
+
+   ```bash
+   bun run build
+   ```
+
+## 🏛️ Architecture Overview
+
+The project follows a modular, scalable folder structure to separate concerns:
+
+- **`src/context`**: Contains `InvoiceContext` and `ThemeContext`.
+- **`src/components/ui`**: Atomic, reusable components like `Button` and `Input`.
+- **`src/components/invoice`**: Domain-specific components like `InvoiceForm` and `InvoiceCard`.
+- **`src/pages`**: Main view components (`Dashboard` and `InvoiceDetail`).
+- **`src/utils`**: Helper functions for ID generation and date formatting.
+
+## ♿ Accessibility Notes
+
+This application was built with accessibility as a core priority:
+
+- **Keyboard Navigation:** All interactive elements are keyboard navigable.
+- **Focus Trapping:** The Delete Confirmation Modal traps focus when open.
+- **Semantic HTML:** Used proper landmarks (`<aside>`, `<main>`) and `<label>` tags.
+- **ARIA Attributes:** Modal triggers include `aria-modal="true"` and `role="dialog"`.
+- **ESC Key Support:** Modals and forms can be closed using the `Escape` key.
+
+## ⚖️ Trade-offs & Challenges
+
+- **LocalStorage vs. Backend:** Chose `LocalStorage` to maximize performance and ensure a strictly client-side React experience.
+- **Tailwind v4 Migration:** Simplified the build process but required custom variants for the manual Dark Mode toggle.
+- **Form State Complexity:** Handling nested arrays in a slide-out panel required balancing `react-hook-form` performance with validation logic.
+
+## 🌟 Future Improvements
+
+- **IndexedDB Integration:** For handling a much larger volume of invoices beyond LocalStorage limits.
+- **PDF Export:** Adding a feature to download or print a professional PDF version.
+- **Sorting:** Adding the ability to sort invoices by Date or Total Amount.
+
+Developed by Emmanuel Emafido Aridon — Frontend Wizards Stage 2 Task
